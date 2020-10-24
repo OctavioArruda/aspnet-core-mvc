@@ -2,8 +2,8 @@ using System.Linq;
 
 namespace aspnetcore.Models
 {
-    public class IRepository
+    public interface IRepository
     {
-        IQueryable<Produto> Produtos { get; set; }
+        IQueryable<Produto> Produtos { get; }
     }
 }

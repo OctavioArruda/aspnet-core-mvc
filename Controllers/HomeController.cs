@@ -11,16 +11,16 @@ namespace aspnetcore.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private IRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IRepository repo)
         {
-            _logger = logger;
+            _repository = repo;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_repository.Produtos);
         }
 
         public IActionResult Privacy()
